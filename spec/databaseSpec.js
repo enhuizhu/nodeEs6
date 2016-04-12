@@ -1,0 +1,15 @@
+"use strict";
+import db from "../src/libs/database.js";
+import {dbConfig} from "../src/config/dbConfig.js";
+
+describe("test database", function() {
+	var database;
+
+	beforeEach(function() {
+		database = new db(dbConfig.HOST, dbConfig.USER, dbConfig.PASSWORD, dbConfig.DATABASE);
+	});
+
+	it("test database constructor", function() {
+
+	});
+});
