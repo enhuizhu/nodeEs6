@@ -10,6 +10,11 @@ describe("test database", function() {
 	});
 
 	it("test database constructor", function() {
-
+		// console.info("test db!");
+		database.query("select * from category").then(function(rows) {
+			console.info("rows is:", rows);
+		}).catch(function(err) {
+			console.info("err is here:", err);
+		})
 	});
 });
