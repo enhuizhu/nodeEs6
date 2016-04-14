@@ -17,7 +17,7 @@ export default class database {
 		let _self = this;
 		
 		return new Promise(function(resolve, reject) {
-			_self.query(queryStr, function(err, rows, fields) {
+			_self.connection.query(queryStr, function(err, rows, fields) {
 				if (!err) {
 					resolve(rows);
 				}else{
