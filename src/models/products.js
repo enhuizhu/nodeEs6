@@ -9,7 +9,11 @@ module.exports = class products extends model {
 	}
 
 	getProducts() {
-		var sql = "select * from " + this.table;
+		var sql = "select a.*, b.name as cname from " + this.table + " as a";
+		sql += " left join category as b";
+		sql += " on a.category_id = b.id";
+		// sql += " group by a.category_id";
+		
 		return this.db.query(sql);
 	}
 }

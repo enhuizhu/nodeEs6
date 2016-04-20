@@ -10,9 +10,10 @@ export default class route {
 	response(obj, req, res) {
 		if( typeof this.controllers[ obj.controller ] == 'undefined' ) {
 			var controller = require("../controllers/" + obj.controller);	
-			this.controllers[ obj.controller ] = new controller(req, res);
+			this.controllers[ obj.controller ] = new controller();
 		}
-		
+
+		this.controllers[obj.controller].setReqRes(req, res);
 		this.controllers[obj.controller][obj.action]();
 	}
 
